@@ -8,6 +8,7 @@ import CustomButton from './CustomButton.jsx';
 import UserButton from './UserButton.jsx';
 import { LinkButton, ShareButton } from './pssEvenHdleAssProps.jsx';
 import Batsman from './batsman.jsx';
+import Users from './Users.jsx';
 
 
 
@@ -73,6 +74,7 @@ function App() {
 
   return (
     <>
+    <Users />
     <div>
       <Batsman />
       <MovieButton movieName="Avatar" />

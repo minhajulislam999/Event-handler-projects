@@ -23,10 +23,21 @@ function Item({isPacked, name}){
     //Logical AND operator (&&) 
 
 
+    // return(
+    //     <li>
+    //         {name} {isPacked && '✅'}
+    //     </li>
+    // )
+
+    //Conditionally assigning JSX to a variable 
+
+    let itemContent = name;
+    if(isPacked){
+        itemContent = name + ' ✅';
+    }
+
     return(
-        <li>
-            {name} {isPacked && '✅'}
-        </li>
+        <li>{itemContent}</li>
     )
 }
 

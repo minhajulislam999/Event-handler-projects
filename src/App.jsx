@@ -16,6 +16,7 @@ import Posts from './posts.jsx';
 import Players from './Players.jsx';
 import Counts from './Counts.jsx';
 import PackingList from './Packinglist.jsx';
+import Show from './UseAndCondition.jsx';
 
 
 // const fetchPosts = async() => {
@@ -116,6 +117,8 @@ function App() {
     
         <Friends friendsPromise={friendsPromise} />
     </Suspense> */}
+
+    <Show />
 
     <PackingList />
     <div>

@@ -17,6 +17,7 @@ import Players from './Players.jsx';
 import Counts from './Counts.jsx';
 import PackingList from './Packinglist.jsx';
 import Show from './UseAndCondition.jsx';
+import HandlingError from './HandlingError.jsx';
 
 
 // const fetchPosts = async() => {
@@ -98,6 +99,8 @@ function App() {
 
   return (
     <>
+
+    <HandlingError />
 
     <Players />
 

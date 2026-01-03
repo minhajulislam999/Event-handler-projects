@@ -14,6 +14,7 @@ import Friends from './friends.jsx';
 import Post from './posts.jsx';
 import Posts from './posts.jsx';
 import Players from './Players.jsx';
+import Counts from './Counts.jsx';
 
 
 // const fetchPosts = async() => {
@@ -114,6 +115,9 @@ function App() {
     
         <Friends friendsPromise={friendsPromise} />
     </Suspense> */}
+    <div>
+      <Counts />
+    </div>
     <div>
       <Batsman />
       <MovieButton movieName="Avatar" />

@@ -48,3 +48,30 @@
   transition: box-shadow 0.3s ease;
   border: 5px solid #e30505;
 }
+
+/* .counter-div{
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: #0b0202;
+  color: white;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+} */
+
+.btn-style{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}

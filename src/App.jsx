@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,11 +9,26 @@ import UserButton from './UserButton.jsx';
 import { LinkButton, ShareButton } from './pssEvenHdleAssProps.jsx';
 import Batsman from './batsman.jsx';
 import Users from './Users.jsx';
+// import { Suspense } from 'react';
+import Friends from './friends.jsx';
+import Post from './posts.jsx';
+import Posts from './posts.jsx';
 
 
+const fetchPosts = async() => {
+  const res = await fetch ('https://jsonplaceholder.typicode.com/posts');
+  return res.json();
+}
 
+const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
+.then(res => res.json() )
   
- 
+
+const fetchFriends = async() => {
+
+  const res = await fetch ('https://jsonplaceholder.typicode.com/users');
+  return res.json();
+}
 
 //🔴 PRACTICE–3 (Challenge 🔥)
 // 🎯 Goal
@@ -66,6 +81,11 @@ function UploadButton(){
 
 function App() {
 
+  const postsPromise = fetchPosts();
+
+  // const friendsPromise = fetchFriends();
+
+
   function handleClick(){
     alert("Button clicked from App.jsx");
   }
@@ -74,7 +94,23 @@ function App() {
 
   return (
     <>
-    <Users />
+
+    <Suspense fallback={<h2>Loading Users...</h2>}>
+    
+    <Posts postsPromise={postsPromise} />
+    
+        </Suspense>
+
+    {/* <Suspense fallback={<h2>Loading...</h2>}>
+        <Users fetchUsers={fetchUsers} />
+
+    
+    </Suspense> */}
+
+    {/* <Suspense fallback={<h2>Friends are coming for tread....</h2>}>
+    
+        <Friends friendsPromise={friendsPromise} />
+    </Suspense> */}
     <div>
       <Batsman />
       <MovieButton movieName="Avatar" />
@@ -115,5 +151,6 @@ function App() {
     </>
   )
 }
+
 
 export default App

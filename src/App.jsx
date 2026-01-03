@@ -13,12 +13,13 @@ import Users from './Users.jsx';
 import Friends from './friends.jsx';
 import Post from './posts.jsx';
 import Posts from './posts.jsx';
+import Players from './Players.jsx';
 
 
-const fetchPosts = async() => {
-  const res = await fetch ('https://jsonplaceholder.typicode.com/posts');
-  return res.json();
-}
+// const fetchPosts = async() => {
+//   const res = await fetch ('https://jsonplaceholder.typicode.com/posts');
+//   return res.json();
+// }
 
 const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
 .then(res => res.json() )
@@ -81,7 +82,7 @@ function UploadButton(){
 
 function App() {
 
-  const postsPromise = fetchPosts();
+  // const postsPromise = fetchPosts();
 
   // const friendsPromise = fetchFriends();
 
@@ -95,11 +96,13 @@ function App() {
   return (
     <>
 
-    <Suspense fallback={<h2>Loading Users...</h2>}>
+    <Players />
+
+    {/* <Suspense fallback={<h2>Loading Users...</h2>}>
     
     <Posts postsPromise={postsPromise} />
     
-        </Suspense>
+        </Suspense> */}
 
     {/* <Suspense fallback={<h2>Loading...</h2>}>
         <Users fetchUsers={fetchUsers} />
